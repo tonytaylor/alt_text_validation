@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains alt_text_validation.module.
+ */
+
+/*use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;*/
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alter the image_style_warmer form to insert a third option.
+ *
+ * Should be removed as part of va.gov-cms#4425 .
+ */
+/*function va_gov_media_form_image_style_warmer_settings_form_alter(array &$form, FormStateInterface $form_state) {
+  $image_styles_config = \Drupal::configFactory()->get('image_style_warmer.settings');
+  $image_styles = $image_styles_config->get('vagov_image_styles');
+  $form['initial_image_styles']['#access'] = FALSE;
+  $form['queue_image_styles']['#access'] = FALSE;
+  $form['vagov_image_styles'] = [
+    '#type' => 'checkboxes',
+    '#title' => t('Late-generated image styles'),
+    '#description' => t('Select image styles which will be created after cropping.'),
+    '#options' => image_style_options(FALSE),
+    '#default_value' => !empty($image_styles) ? $image_styles : [],
+    '#size' => 10,
+  ];
+}*/
+
+
+
+/**
+ * Implements hook_clientside_validation_validator_info_alter().
+ */
+function alt_text_validation_clientside_validation_validator_info_alter(&$validators) {
+  foreach ($validators as &$validator) {
+    $validator['attachments']['library'][] = 'va_gov_media/cv.alt-text.validate';
+  }
+}

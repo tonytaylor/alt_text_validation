@@ -1,0 +1,8 @@
+services:
+  logger.channel.alt_text_validation:
+    parent: logger.channel_base
+    arguments: [ 'alt_text_validation' ]
+  alt_text_validation.event_subscriber:
+      class: Drupal\alt_text_validation\EventSubscriber\MediaEventSubscriber
+      tags:
+        - { name: event_subscriber }

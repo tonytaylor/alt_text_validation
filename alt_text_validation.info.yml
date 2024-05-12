@@ -1,0 +1,13 @@
+name: 'Image Alt-Text Validation'
+type: module
+description: 'Provides image alt-text content validation services'
+core_version_requirement: ^9 || ^10
+package: 'Custom'
+
+dependencies:
+  - drupal:hook_event_dispatcher
+  - drupal:field_event_dispatcher
+  - drupal:core_event_dispatcher
+  - drupal:textfield_counter
+  - drupal:clientside_validation
+  - drupal:clientside_validation_jquery
