@@ -39,6 +39,6 @@ use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;*/
  */
 function alt_text_validation_clientside_validation_validator_info_alter(&$validators) {
   foreach ($validators as &$validator) {
-    $validator['attachments']['library'][] = 'va_gov_media/cv.alt-text.validate';
+    $validator['attachments']['library'][] = 'alt_text_validation/cv.alt-text.validate';
   }
 }

@@ -4,7 +4,7 @@ namespace Drupal\alt_text_validation\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\va_gov_media\EventSubscriber\MediaEventSubscriber;
+use Drupal\alt_text_validation\EventSubscriber\MediaEventSubscriber;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
